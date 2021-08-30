@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+@import "./variables";
+@import "./mixins";
+
+/// theme three ///
+
+body.theme-three {
+  background: $themeThreeMainBG;
+  color: $themeThreeDarkTextColor;
+  transition: 0.8s ease-in-out;
+  color: $themeThreeYellowTextColor;
+}
+
+body.theme-three header {
+  .calc {
+    color: $themeThreeYellowTextColor;
+  }
+  .switch {
+    background-color: $themeThreeToggleBG;
+  }
+}
+
+body.theme-three main {
+  .result {
+    background: $themeThreeScreenBG;
+  }
+  .buttons {
+    background: $themeThreeToggleBG;
+  }
+  .reset {
+    background: $themeThreeKeyBG;
+    box-shadow: 0px 4px $themeThreeKeyShadow;
+  }
+  .equal {
+    color: $themeThreeLightTextColor;
+    background: $themeThreeKeyToggleBG;
+    box-shadow: 0px 4px $themeThreeKeyToggleShadowBG;
+  }
+  .del {
+    background: $themeThreeKeyBG;
+    box-shadow: 0px 4px $themeThreeKeyShadow;
+  }
+  .display {
+    color: $themeThreeYellowTextColor;
+    background: $themeThreeScreenBG;
+  }
+}
+
+/// theme two ////
+
+body.theme-two {
+  background: $themeTwoMainBG;
+  color: $themeTwoDarkTextColor;
+  transition: 0.8s ease-in-out;
+}
+
+body.theme-two header {
+  .calc {
+    color: $themeTwoDarkTextColor;
+  }
+  .switch {
+    background-color: $themeTwoToggleBG;
+  }
+}
+
+body.theme-two main {
+  .result {
+    background: $themeTwoScreenBG;
+  }
+  .buttons {
+    background: $themeTwoToggleBG;
+  }
+  .reset {
+    background: $themeTwoKeyBG;
+    box-shadow: 0px 4px $themeTwoKeyShadow;
+  }
+  .equal {
+    color: $themeTwoLightTextColor;
+    background: $themeTwoKeyToggleBG;
+    box-shadow: 0px 4px $themeTwoKeyToggleShadowBG;
+  }
+  .del {
+    background: $themeTwoKeyBG;
+    box-shadow: 0px 4px $themeTwoKeyShadow;
+  }
+  .display {
+    color: $themeTwoDarkTextColor;
+    background: $themeTwoScreenBG;
+  }
+}
+
+/// theme one ////
+
+body.theme-one {
+  background: $themeOneMainBG;
+  color: $themeOneLightTextColor;
+  transition: 0.8s ease-in-out;
+}
+
+* {
+  border-radius: 13px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-family: Spartan;
+  font-size: $fontSize;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: $width;
+  align-items: center;
+  .calc {
+    color: $themeOneLightTextColor;
+  }
+}
+
+header .switch {
+  width: 90px;
+  height: 30px;
+  text-align: center;
+  background-color: $themeOneToggleBG;
+  border-radius: 999px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  &::before {
+    content: "THEME";
+    position: absolute;
+    font-size: 0.45rem;
+    transform: translate(-180%, 20%);
+  }
+  input {
+    position: relative;
+    z-index: 1;
+    margin-right: -10px;
+  }
+  div {
+    transform: translate(-90%, -190%);
+    @include flexCenter;
+    font-size: 0.4rem;
+    position: relative;
+  }
+  input[type="radio"] {
+    @include flexCenter;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .slider {
+    position: absolute;
+  }
+  .one:checked + .slider {
+    position: absolute;
+    transform: translateX(-150%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $themeOneKeyToggleBG;
+  }
+  .two:checked + .slider {
+    position: absolute;
+    transform: translateX(-20%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $themeTwoKeyToggleBG;
+  }
+  .three:checked + .slider {
+    position: absolute;
+    transform: translateX(125%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $themeThreeKeyToggleBG;
+  }
+}
+
+main .result {
+  width: $width;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: $themeOneScreenBG;
+  margin-bottom: 2%;
+  padding-right: 1.6%;
+  .display {
+    @include flexCenter;
+    overflow: hidden;
+    font-size: 1.8rem;
+    background: $themeOneScreenBG;
+  }
+}
+
+main .buttons {
+  width: $width;
+  height: 490px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: $themeOneToggleBG;
+  padding: 20px;
+  .num {
+    display: inline-flex;
+    width: calc(60% / 3);
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    margin: 1%;
+    padding-top: 1.5%;
+    cursor: pointer;
+    background: $themeOneSpecialKeyBG;
+    color: $themeOneDarkTextColor;
+    box-shadow: 0px 4px $themeOneSpecialKeyShadow;
+    border: none;
+  }
+  .del {
+    background: $themeOneKeyBG;
+    color: $themeOneSpecialKeyBG;
+    font-size: 0.7rem;
+    box-shadow: 0px 4px $themeOneKeyShadow;
+  }
+  .reset {
+    background: $themeOneKeyBG;
+    box-shadow: 0px 4px $themeOneKeyShadow;
+    width: 45%;
+    color: $themeOneSpecialKeyBG;
+    font-size: 0.7rem;
+  }
+  .equal {
+    background: $themeOneKeyToggleBG;
+    box-shadow: 0px 4px $themeOneKeyToggleShadowBG;
+    width: 45%;
+  }
+}
+
+main .buttons .num:active {
+  transition: all 0.05s ease-in-out;
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+}
+
+@media all and (max-width: 1200px) {
+  main {
+    overflow: hidden;
+    .result {
+      width: 50%;
+    }
+    header {
+      width: 50%;
+    }
+    .buttons {
+      width: 50%;
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  main {
+    overflow: hidden;
+    .result {
+      width: 80%;
+    }
+    header {
+      width: 80%;
+    }
+    .buttons {
+      width: 80%;
+    }
+  }
+}
+
+@media all and (max-width: 375px) {
+  main {
+    overflow: hidden;
+    .result {
+      width: 85%;
+    }
+    header {
+      width: 85%;
+    }
+    .buttons {
+      width: 85%;
+    }
+  }
+}

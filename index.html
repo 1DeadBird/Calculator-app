@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Calculator app</title>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body class="theme-one">
+    <main>
+      <header>
+        <p class="calc">calc</p>
+        <div class="switch">
+          <input
+            type="radio"
+            class="one"
+            id="radio-one"
+            name="switch"
+            onchange="themeOneChange()"
+            checked
+          />
+          <label for="radio-one" class="slider"></label>
+          <div id="one">1</div>
+          <input
+            type="radio"
+            class="two"
+            id="radio-two"
+            name="switch"
+            onchange="themeTwoChange()"
+          />
+          <label for="radio-two" class="slider"></label>
+          <div id="two">2</div>
+          <input
+            type="radio"
+            class="three"
+            id="radio-three"
+            name="switch"
+            onchange="themeThreeChange()"
+          />
+          <label for="radio-three" class="slider"></label>
+          <div id="three">3</div>
+        </div>
+      </header>
+      <div class="result"><span class="display"></span></div>
+      <div class="buttons">
+        <button type="button" class="num" value="7">7</button>
+        <button type="button" class="num" value="8">8</button>
+        <button type="button" class="num" value="9">9</button>
+
+        <button type="button" class="num del" value="del">DEL</button>
+
+        <button type="button" class="num" value="4">4</button>
+        <button type="button" class="num" value="5">5</button>
+        <button type="button" class="num" value="6">6</button>
+
+        <button type="button" class="num key" value="+">+</button>
+
+        <button type="button" class="num" value="1">1</button>
+        <button type="button" class="num" value="2">2</button>
+        <button type="button" class="num" value="3">3</button>
+
+        <button type="button" class="num key" value="-">-</button>
+
+        <button type="button" class="num dot" value=".">.</button>
+
+        <button type="button" class="num" value="0">0</button>
+
+        <button type="button" class="num key" value="/">&divide;</button>
+        <button type="button" class="num key" value="*">&times;</button>
+        <button type="button" class="num reset" value="reset">RESET</button>
+        <button type="button" class="num key equal" value="=">=</button>
+      </div>
+    </main>
+
+    <footer>Coded by Szymon Wróbel.</footer>
+  </body>
+</html>
